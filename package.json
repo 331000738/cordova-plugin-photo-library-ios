@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-photo-library-ios",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Plugin that just gets photos from the gallery",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,18 @@
     "type": "git",
     "url": "git+https://github.com/terikon/cordova-plugin-photo-library-ios.git"
   },
+  "cordova": {
+    "id": "cordova-plugin-photo-library-ios",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "engines": [
+    {
+      "name": "cordova-ios",
+      "version": ">=5.0.1"
+    }
+  ],
   "author": {
     "name": "Roman Viskin",
     "email": "npm@terikon.com",
