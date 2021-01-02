@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-photo-library-ios" version="2.3.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Photo Library</name>
+    <engines>
+      <engine name="cordova-ios" version=">=4.5.1" />
+    </engines>
+
+    <js-module src="www/PhotoLibrary.js" name="PhotoLibrary">
+        <clobbers target="cordova.plugins.photoLibrary" />
+    </js-module>
+    <js-module src="www/async/dist/async.min.js" name="async" />
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PhotoLibrary">
+                <param name="ios-package" value="PhotoLibrary" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION" default=" "/>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>$PHOTO_LIBRARY_USAGE_DESCRIPTION</string>
+        </config-file>
+        <source-file src="src/ios/PhotoLibrary.swift" />
+        <source-file src="src/ios/PhotoLibraryProtocol.swift" />
+        <source-file src="src/ios/PhotoLibraryService.swift" />
+        <source-file src="src/ios/PhotoLibraryGetLibraryOptions.swift" />
+        <dependency id="cordova-plugin-add-swift-support" version="^1.6.0"/>
+    </platform>
+    <dependency id="cordova-plugin-file" version="^6.0.1"/>
+</plugin>
